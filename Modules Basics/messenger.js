@@ -2,6 +2,8 @@ const http = require('http');
 const fs = require('fs')
 const os = require('os');
 
+const dir = 'data'
+
 const server = http.createServer(function (req, res) {
 
   const url = req.url;
@@ -15,7 +17,7 @@ const server = http.createServer(function (req, res) {
     res.write('<head><title>Enter Message</title></head>');
     res.write(
       `<body>
-          <h1>HTTP Messenger</h1>
+          <h1>HTTP Messenger2</h1>
           <ul>
             <li><label>URL: </label>${url}</li>
             <li><label>Method: </label>${method}</li>
@@ -40,6 +42,9 @@ const server = http.createServer(function (req, res) {
       console.log('Body Raw:', body);
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split('=')[1];
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir);
+      }
       fs.appendFile('data/messages.txt', message + os.EOL, err => {
         res.statusCode = 302;
         res.setHeader('Location', '/');
