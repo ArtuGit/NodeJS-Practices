@@ -4,21 +4,43 @@ const os = require('os');
 
 const dir = 'data'
 
+function params(req) {
+  let q = req.url.split('?'), result = {};
+  if (q.length >= 2) {
+    q[1].split('&').forEach((item) => {
+      try {
+        result[item.split('=')[0]] = item.split('=')[1];
+      } catch (e) {
+        result[item.split('=')[0]] = '';
+      }
+    })
+  }
+  return result;
+}
+
 const server = http.createServer(function (req, res) {
 
   const url = req.url;
   const method = req.method;
 
   //console.log('Headers:', req.headers)
-
-  if (url === '/') {
+  if (url === '/' || url.substring(0, 7) == "/?prev=") {
     res.setHeader('Content-Type', 'text/html');
-    res.write('<html lang="en">');
-    res.write('<head><title>Enter Message</title></head>');
-    res.write(
-      `<body>
-          <h1>HTTP Messenger2</h1>
-          <ul>
+    req.params = params(req);
+    const messagePrev = req.params.prev
+    let html
+    html = `     
+    <html lang="en">
+      <head>
+        <title>HTTP Messenger</title>
+      </head>
+      <body>
+        <h1>HTTP Messenger</h1>
+      <ul>`
+    if (messagePrev) {
+      html += `<li><label>Previous message:</label> ${messagePrev}</li>`
+    }
+    html += `
             <li><label>URL: </label>${url}</li>
             <li><label>Method: </label>${method}</li>
           </ul>
@@ -26,9 +48,9 @@ const server = http.createServer(function (req, res) {
             <input type="text" name="message">
             <button type="submit">Send</button>
           </form>
-       </body>`
-    );
-    res.write('</html>');
+       </body>
+    </html>`
+    res.write(html);
     return res.end();
   }
 
@@ -47,12 +69,12 @@ const server = http.createServer(function (req, res) {
       }
       fs.appendFile('data/messages.txt', message + os.EOL, err => {
         res.statusCode = 302;
-        res.setHeader('Location', '/');
+        res.setHeader('Location', `/?prev=${message}`);
+
         return res.end();
       });
     });
   }
-
 })
 
 server.listen(3030);
