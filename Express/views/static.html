@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title>Add Product</title>
+  <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+<h1>Hello from Express!</h1>
+<h2>Static</h2>
+<img class="img-main" src="/images/example.png">
+<script>
+  function backAway() {
+    //if it was the first page
+    if (history.length === 1) {
+      window.location = "/"
+    } else {
+      history.back();
+    }
+  }
+</script>
+<a href="#" onClick="backAway()">Back</a>
+</body>
+
+</html>

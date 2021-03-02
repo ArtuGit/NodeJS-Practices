@@ -17,7 +17,8 @@ app.use(mainRoutes);
 app.use('/api', apiRoutes);
 
 app.use((req, res, next) => {
-    res.status(404).send('<h1>Page not found (404)</h1>');
+    //res.status(404).send('<h1>Page not found (404)</h1>');
+    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
 });
 
 app.listen(3030);
