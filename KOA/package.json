@@ -1,0 +1,25 @@
+{
+  "name": "koa-sandbox",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtuGit/KOA-Sandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArtuGit/KOA-Sandbox/issues"
+  },
+  "homepage": "https://github.com/ArtuGit/KOA-Sandbox#readme",
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "koa": "^2.13.4"
+  }
+}
