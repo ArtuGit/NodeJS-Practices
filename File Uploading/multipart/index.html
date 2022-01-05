@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Forms</title>
+</head>
+<body>
+
+<form action="http://localhost:3011/upload-profile-pic" enctype="multipart/form-data" method="POST">
+  <div>
+    <label>Select your profile picture:</label>
+    <input name="profile_pic" type="file"/>
+  </div>
+  <div>
+    <input name="btn_upload_profile_pic" type="submit" value="Upload"/>
+  </div>
+</form>
+<hr>
+<form action="http://localhost:3011/upload-multiple-images" enctype="multipart/form-data" method="POST">
+  <div>
+    <label>Select multiple images:</label>
+    <input multiple name="multiple_images" type="file"/>
+  </div>
+  <div>
+    <input name="btn_upload_multiple_images" type="submit" value="Upload"/>
+  </div>
+</form>
+
+</body>
+</html>
