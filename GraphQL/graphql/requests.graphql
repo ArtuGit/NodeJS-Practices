@@ -1,0 +1,13 @@
+query {hello}
+mutation {
+    createUser(userInput: {email: "test2@test.com", name: "TestUser", password: "password"}) {
+        _id
+        email
+    }
+}
+mutation {
+    secondMutation {
+        status,
+        affected
+    }
+}
