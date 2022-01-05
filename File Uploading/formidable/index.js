@@ -5,12 +5,12 @@ var fs = require('fs');
 http.createServer(function (req, res) {
   if (req.url == '/fileupload') {
     var form = new formidable.IncomingForm({
-      uploadDir: __dirname + '/tmp',  // don't forget the __dirname here
+      uploadDir: __dirname + '/../tmp',  // don't forget the __dirname here
       keepExtensions: true
     });
     form.parse(req, function (err, fields, files) {
       var oldpath = files.filetoupload.filepath;
-      var newpath = __dirname + '/Uploaded/' + files.filetoupload.originalFilename;
+      var newpath = __dirname + '/../Uploaded/' + files.filetoupload.originalFilename;
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
         res.write('File uploaded and moved!');
@@ -25,4 +25,4 @@ http.createServer(function (req, res) {
     res.write('</form>');
     return res.end();
   }
-}).listen(8080);
+}).listen(8081);
