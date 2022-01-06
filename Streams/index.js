@@ -16,6 +16,11 @@ downloadStream.on("downloadProgress", ({transferred, total, percent}) => {
   console.error(`progress: ${transferred}/${total} (${percentage}%)`);
 });
 
-pipeline(downloadStream, fileWriterStream)
-  .then(() => console.log(`File downloaded to ${fileName}`))
-  .catch((error) => console.error(`Something went wrong. ${error.message}`));
+(async () => {
+  try {
+    await pipeline(downloadStream, fileWriterStream);
+    console.log(`File downloaded to ${fileName}`);
+  } catch (error) {
+    console.error(`Something went wrong. ${error.message}`);
+  }
+})();
