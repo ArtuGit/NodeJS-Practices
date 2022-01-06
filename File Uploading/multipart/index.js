@@ -6,13 +6,11 @@ const helpers = require('./helpers');
 
 const app = express();
 
-const port = process.env.PORT || 3011;
-
-app.use(express.static(__dirname + '/public'));
+const port = 3011;
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/');
+    cb(null, '../uploads/');
   },
 
   // By default, multer removes file extensions so let's add them back
@@ -42,7 +40,7 @@ app.post('/upload-profile-pic', (req, res) => {
     }
 
     // Display uploaded image for user validation
-    res.send(`You have uploaded this image: <hr/><img src="${req.file.path}" width="500"><hr /><a href="./">Upload another image</a>`);
+    res.send(`You have uploaded this image: ${req.file.path}`);
   });
 });
 
@@ -55,23 +53,20 @@ app.post('/upload-multiple-images', (req, res) => {
   upload(req, res, function (err) {
     if (req.fileValidationError) {
       return res.send(req.fileValidationError);
-    } else if (!req.file) {
-      return res.send('Please select an image to upload');
     } else if (err instanceof multer.MulterError) {
       return res.send(err);
     } else if (err) {
       return res.send(err);
     }
 
-    let result = "You have uploaded these images: <hr />";
+    let result = "You have uploaded these images: <br>";
     const files = req.files;
     let index, len;
 
     // Loop through all the uploaded images and display them on frontend
     for (index = 0, len = files.length; index < len; ++index) {
-      result += `<img src="${files[index].path}" width="300" style="margin-right: 20px;">`;
+      result += `${files[index].path}<br>`;
     }
-    result += '<hr/><a href="./">Upload more images</a>';
     res.send(result);
   });
 });

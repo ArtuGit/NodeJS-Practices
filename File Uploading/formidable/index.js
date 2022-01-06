@@ -10,7 +10,7 @@ http.createServer(function (req, res) {
     });
     form.parse(req, function (err, fields, files) {
       var oldpath = files.filetoupload.filepath;
-      var newpath = __dirname + '/../Uploaded/' + files.filetoupload.originalFilename;
+      var newpath = __dirname + '/../uploads/' + files.filetoupload.originalFilename;
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
         res.write('File uploaded and moved!');
