@@ -1,6 +1,4 @@
-# 04-web-spider-v2
-
-Web spider example to demonstrate sequential callbacks
+# Web spider example
 
 ## Run
 
@@ -15,3 +13,6 @@ You can optionally specify the maximum depth of crawling by passing a second par
 ```bash
 node spider-cli.js https://loige.co 5
 ```
+
+## Sources examples
+- https://www.york.ac.uk/teaching/cws/wws/webpage1.html
