@@ -28,7 +28,7 @@ export function urlToFilename (url) {
     filename += '.html'
   }
 
-  return filename
+  return 'web-data/' + filename
 }
 
 export function getPageLinks (currentUrl, body) {
