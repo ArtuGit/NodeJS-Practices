@@ -6,7 +6,7 @@ function fakeRequest(url, isResolved) {
   return isResolved;
 }
 
-const fakeRequestPromise = (url, throwError, isResolved= true) => {
+const fakeRequestPromise = (url, throwError = false, isResolved= true) => {
   return new Promise((resolve, reject) => {
     if (throwError) {
       throw new Error('Tech failure!')
@@ -25,7 +25,7 @@ const request = fakeRequestPromise('api/callback0', true)
     console.log(err);
   });
 
-const request1 = fakeRequestPromise('api/callback1', false)
+const request1 = fakeRequestPromise('api/callback1')
   .then((data) => {
     console.log("Success (callback1)!");
     console.log("Data:",data);
@@ -35,14 +35,14 @@ const request1 = fakeRequestPromise('api/callback1', false)
     console.log(err);
   });
 
-// const twoRequests = fakeRequestPromise('api/callback1', false, true)
+// const twoRequests = fakeRequestPromise('api/callback1')
 //   .then((data) => {
 //     console.log("Success (callback1)!");
 //     console.log("Data:",data);
 //     return fakeRequestPromise('api/callback2', false, false);
 //   })
 //   .catch((err) => {
-//     console.log("Not Resolved!");
+//     console.log("Why?!");
 //     console.log(err);
 //   })
 //   .then((data) => {
