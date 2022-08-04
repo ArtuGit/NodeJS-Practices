@@ -3,7 +3,7 @@ var keys = [];
 for (var key in foo) {
   keys.push(key);
 }
-console.log(keys)
+console.log(keys) // console: [ 'alpha', 'beta' ]
 
 // simple array
 const arr = ['a', 'b', 'c'];
@@ -27,3 +27,5 @@ const myObj = Object.create({}, {
 });
 myObj.foo = 1;
 console.log(Object.keys(myObj)); // console: ['foo']
+console.log(myObj.getFoo); // console: [Function: value]
+console.log(myObj.getFoo()); // console: 1
