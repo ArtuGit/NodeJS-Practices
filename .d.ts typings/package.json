@@ -1,0 +1,11 @@
+{
+  "name": "dts-typings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "14 || 16 || 18"
+  },
+  "author": "",
+  "license": "ISC"
+}
