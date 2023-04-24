@@ -1,4 +1,0 @@
-## Simple Starter
-
-- ESLint
-- Prettier
