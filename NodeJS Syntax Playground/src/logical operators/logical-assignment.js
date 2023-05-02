@@ -7,13 +7,13 @@ const calcBoolAndPrint = (a, b) => {
   let and = a;
   let nc = a;
 
-  or ||= b;
-  and &&= b;
-  nc ??= b;
-
   const or2 = or || b;
   const and2 = and && b;
   const nc2 = nc ?? b;
+
+  or ||= b;
+  and &&= b;
+  nc ??= b;
 
   console.log(
     { a, b },
