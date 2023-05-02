@@ -1,11 +1,14 @@
 const {Worker} = require("worker_threads");
 
-let number = 15;
+let number = 33;
 
 const worker = new Worker("./myWorker.js", {workerData: {num: number}});
 
+for (let i = 33; i < 45; i++) {
+  // Do some random work
+}
 worker.once("message", result => {
-  console.log(`${number}th Fibonacci No: ${result}`);
+  console.log(`${number} the Fibonacci No: ${result}`);
 });
 
 worker.on("error", error => {
