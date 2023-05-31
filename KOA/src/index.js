@@ -2,6 +2,7 @@ import http from 'http'
 import https from 'https'
 import Koa from "koa";
 import cors from "@koa/cors";
+import 'dotenv/config'
 
 const app = new Koa();
 
@@ -31,7 +32,7 @@ app.use(async (ctx, next) => {
 
 // response
 app.use(async ctx => {
-  ctx.body = 'Hello World';
+  ctx.body = `Hello, you have got a var value: "${process.env.VAR}"`;
 });
 
 // Listen

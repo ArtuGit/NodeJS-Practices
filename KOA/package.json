@@ -23,6 +23,7 @@
   "homepage": "https://github.com/ArtuGit/KOA-Sandbox#readme",
   "dependencies": {
     "@koa/cors": "^3.1.0",
+    "dotenv": "^16.1.1",
     "koa": "^2.13.4",
     "nodemon": "^2.0.22",
     "pm2": "^5.3.0"
