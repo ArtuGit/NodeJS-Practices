@@ -5,9 +5,10 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "pm2 start src/index.js",
-    "start:watch": "pm2 start src/index.js --watch",
-    "stop": "pm2 stop all",
+    "start": "node src/index.js",
+    "pm2:start": "pm2 start src/index.js",
+    "pm2:start:watch": "pm2 start src/index.js --watch",
+    "pm2:stop": "pm2 stop all",
     "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
