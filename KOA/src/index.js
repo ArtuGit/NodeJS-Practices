@@ -11,8 +11,8 @@ app.use(cors({origin: "*"}));
 
 // Settings
 const HOST = 'localhost';
-const HTTP_PORT = 3000;
-const HTTPS_PORT = 3001;
+const HTTP_PORT = 5000;
+const HTTPS_PORT = 5001;
 
 
 // logger
