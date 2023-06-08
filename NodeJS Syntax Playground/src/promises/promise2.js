@@ -24,11 +24,11 @@ const promise5 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo')
 const promises = [promise4, promise5];
 
 Promise.allSettled(promises).
-then((results) => results.forEach((result) => console.log(result.status)));
+then((results) => results.forEach((result) => console.log(result)));
 
 // expected output:
-// "fulfilled"
-// "rejected"
+// { status: 'fulfilled', value: 3 }
+// { status: 'rejected', reason: 'foo' }
 
 const first = new Promise((resolve, reject) => {
   setTimeout(resolve, 500, 'first')
