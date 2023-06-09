@@ -1,6 +1,6 @@
 // Error handling
 
-const createAndRunPromise = (shouldResolve, throwError = false) => {
+const createPromise = async (shouldResolve, throwError = false) => {
   return new Promise((resolve, reject) => {
     if (throwError) {
       throw new Error("Error thrown");
@@ -13,12 +13,17 @@ const createAndRunPromise = (shouldResolve, throwError = false) => {
   })
     .then((result) => {
       console.log("Promise resolved with result: ", result);
+      return result;
     })
     .catch((err) => {
       console.log("Error has been caught: ", err);
     });
 };
 
-createAndRunPromise(true);
-createAndRunPromise(false);
-createAndRunPromise(true, true);
+const main = async () => {
+  await createPromise(true);
+  await createPromise(false);
+  await createPromise(true, true);
+};
+
+main();
