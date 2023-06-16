@@ -5,13 +5,13 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'airbnb-base',
-    'plugin:prettier/recommended'
+    'eslint-config-airbnb-base',
   ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
   rules: {
+    quotes: ['warn', 'single'],
   }
 }
