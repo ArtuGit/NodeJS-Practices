@@ -1,1 +1,2 @@
-console.log('JS is here')
+// eslint-disable-next-line no-console
+console.info('JS is here');
