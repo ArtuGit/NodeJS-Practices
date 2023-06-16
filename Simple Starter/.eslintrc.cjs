@@ -6,6 +6,8 @@ module.exports = {
   },
   extends: [
     'eslint-config-airbnb-base',
+    'plugin:node/recommended',
+    'plugin:eslint-plugin-promise/recommended',
   ],
   parserOptions: {
     ecmaVersion: 'latest',
