@@ -1,5 +1,3 @@
-import util from 'util'
-
 const myObject = {
   city: 'Madrid',
   greet() {
