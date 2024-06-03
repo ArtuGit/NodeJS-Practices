@@ -24,6 +24,12 @@ console.log(getHeroName.call(hero)); // Output: Batman
 console.log(getHeroName.bind(hero)()); // Output: Batman
 console.log(getHeroName.apply(hero)); // Output: Batman
 
-console.log(hero.getName2()); // Output: undefined
-console.log(hero.getName3()); // Output: Batman
+const getHeroName2 = hero.getName2;
 
+console.log(hero.getName2()); // Output: undefined
+console.log(getHeroName2()); // Output: undefined
+console.log(getHeroName2.call(hero)); // Output: undefined
+console.log(getHeroName2.bind(hero)()); // Output: undefined
+console.log(getHeroName2.apply(hero)); // Output: undefined
+
+console.log(hero.getName3()); // Output: Batman
