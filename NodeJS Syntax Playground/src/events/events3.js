@@ -1,4 +1,4 @@
-import {createReadStream} from "fs";
+import { createReadStream } from "fs";
 
 let chunkIndex = 0;
 const readStream = createReadStream("./data.txt");

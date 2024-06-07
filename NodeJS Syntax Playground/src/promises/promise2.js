@@ -1,7 +1,7 @@
 const promise1 = Promise.resolve(3);
 const promise2 = 42;
 const promise3 = new Promise((resolve, reject) => {
-  setTimeout(resolve, 100, 'foo');
+  setTimeout(resolve, 100, "foo");
 });
 
 Promise.all([promise1, promise2, promise3]).then((values) => {
@@ -9,34 +9,37 @@ Promise.all([promise1, promise2, promise3]).then((values) => {
 });
 // expected output: Array [3, 42, "foo"]
 
-
-const promise2Wrong = Promise.reject('Something is wrong');
-Promise.all([promise1, promise2Wrong, promise3]).then((values) => {
-  console.log(values);
-})
-  .catch(err => {
-    console.error(err)
+const promise2Wrong = Promise.reject("Something is wrong");
+Promise.all([promise1, promise2Wrong, promise3])
+  .then((values) => {
+    console.log(values);
   })
+  .catch((err) => {
+    console.error(err);
+  });
 // expected output: Something is wrong
 
 const promise4 = Promise.resolve(3);
-const promise5 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo'));
+const promise5 = new Promise((resolve, reject) =>
+  setTimeout(reject, 100, "foo")
+);
 const promises = [promise4, promise5];
 
-Promise.allSettled(promises).
-then((results) => results.forEach((result) => console.log(result)));
+Promise.allSettled(promises).then((results) =>
+  results.forEach((result) => console.log(result))
+);
 
 // expected output:
 // { status: 'fulfilled', value: 3 }
 // { status: 'rejected', reason: 'foo' }
 
 const first = new Promise((resolve, reject) => {
-  setTimeout(resolve, 500, 'first')
-})
+  setTimeout(resolve, 500, "first");
+});
 const second = new Promise((resolve, reject) => {
-  setTimeout(resolve, 100, 'second')
-})
+  setTimeout(resolve, 100, "second");
+});
 
-Promise.race([first, second]).then(result => {
-  console.log(result) // second
-})
+Promise.race([first, second]).then((result) => {
+  console.log(result); // second
+});

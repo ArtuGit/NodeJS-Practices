@@ -1,2 +1,2 @@
-const value = 777
-throw value
+const value = 777;
+throw value;

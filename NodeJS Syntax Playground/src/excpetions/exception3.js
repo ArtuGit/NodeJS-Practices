@@ -4,4 +4,4 @@ class NotEnoughCoffeeError extends Error {
     this.name = "Not Enough Coffee Error"; // (2)
   }
 }
-throw new NotEnoughCoffeeError('message')
+throw new NotEnoughCoffeeError("message");

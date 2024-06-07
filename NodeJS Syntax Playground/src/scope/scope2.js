@@ -6,11 +6,11 @@ const hero = {
   getName2: () => {
     return this.name;
   },
-  getName3: function() {
+  getName3: function () {
     const self = this;
     const arrowFunc = () => {
       return self.name;
-    }
+    };
     return arrowFunc();
   },
 };

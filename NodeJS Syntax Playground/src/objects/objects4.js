@@ -7,12 +7,11 @@ const circle = new Circle();
 shape.__proto__ = circle;
 
 // Get the object prototype
-console.log(shape.__proto__ === Circle);  // false
-console.log(shape.__proto__ === circle);  // true
+console.log(shape.__proto__ === Circle); // false
+console.log(shape.__proto__ === circle); // true
 
-circle.radius = 3
-console.log({circle,shape},shape.__proto__)
-
+circle.radius = 3;
+console.log({ circle, shape }, shape.__proto__);
 
 const ShapeA = function () {};
 const ShapeB = {
@@ -28,7 +27,6 @@ const shapeA = new ShapeA();
 shapeA.a(); // aaa
 console.log(ShapeA.prototype === shapeA.__proto__); // true
 
-
 const ShapeC = function () {};
 const ShapeD = {
   a() {
@@ -40,7 +38,6 @@ const shapeC = new ShapeC();
 shapeC.__proto__ = ShapeD;
 shapeC.a(); // a
 console.log(ShapeC.prototype === shapeC.__proto__); // false
-
 
 function Test() {}
 Test.prototype.myName = function () {

@@ -2,6 +2,12 @@ const makeStep = (step) => {
   console.log(`Step: ${step}`);
 };
 
+const iterate = (name, count) => {
+  for (let i = 0; i <= count; i++) {
+    console.log(`${name}: ${i}`);
+  }
+};
+
 const main = () => {
   makeStep("initial");
 
@@ -17,6 +23,7 @@ const main = () => {
 
   new Promise((resolve, reject) => {
     makeStep("promise 1 executor");
+    iterate("promise 1 executor", 3);
     resolve();
   })
     .then(() => {
@@ -26,7 +33,7 @@ const main = () => {
       makeStep("promise 1 after resolve 2");
     });
 
-  new Promise((resolve, reject) => {
+  const p2 = new Promise((resolve, reject) => {
     makeStep("promise 2 executor");
     setTimeout(() => {
       makeStep("promise 2 before resolve");
@@ -39,7 +46,5 @@ const main = () => {
 
 main();
 
-for (let i = 0; i <= 10; i++) {
-  makeStep("sync iteration " + i);
-}
+iterate("sync iteration", 10);
 makeStep("last sync");

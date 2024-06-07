@@ -1,9 +1,9 @@
 const person = {
-  name: 'Alice',
-  age: 30
+  name: "Alice",
+  age: 30,
 };
 
-const descriptor = Object.getOwnPropertyDescriptor(person, 'name');
+const descriptor = Object.getOwnPropertyDescriptor(person, "name");
 console.log(descriptor);
 /*
 Output:

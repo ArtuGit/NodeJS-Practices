@@ -1,1 +1,1 @@
-throw new Error('Ran out of coffee')
+throw new Error("Ran out of coffee");

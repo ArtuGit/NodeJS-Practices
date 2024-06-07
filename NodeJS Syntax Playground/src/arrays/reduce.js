@@ -122,7 +122,6 @@ const countedNames2 = names.reduce((allNames, name) => {
 }, Object.create(null));
 console.log(countedNames2);
 
-
 const friends = [
   { name: "Anna", books: ["Bible", "Harry Potter"] },
   { name: "Bob", books: ["War and peace", "Romeo and Juliet"] },

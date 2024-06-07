@@ -1,23 +1,23 @@
-let done = true
+const done = true;
 
 const isItDoneYet = new Promise((resolve, reject) => {
   if (done) {
-    const workDone = 'Here is the thing I built'
-    resolve(workDone)
+    const workDone = "Here is the thing I built";
+    resolve(workDone);
   } else {
-    const why = 'Still working on something else'
-    reject(why)
+    const why = "Still working on something else";
+    reject(why);
   }
-})
+});
 
 const checkIfItsDone = () => {
   isItDoneYet
-    .then(ok => {
-      console.log(ok)
+    .then((ok) => {
+      console.log(ok);
     })
-    .catch(err => {
-      console.error(err)
-    })
-}
+    .catch((err) => {
+      console.error(err);
+    });
+};
 
-checkIfItsDone()
+checkIfItsDone();

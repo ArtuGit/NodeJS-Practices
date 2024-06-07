@@ -1,9 +1,9 @@
-var cluster = require('cluster');
+const cluster = require("cluster");
 
 if (cluster.isWorker) {
-  console.log('I am a worker');
+  console.log("I am a worker");
 } else {
-  console.log('I am a master');
+  console.log("I am a master");
   cluster.fork();
   cluster.fork();
   cluster.fork();
