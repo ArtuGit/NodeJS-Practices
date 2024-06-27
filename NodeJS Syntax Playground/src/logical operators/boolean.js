@@ -22,32 +22,38 @@ let result;
 // Logical AND (&&)
 
 result = undefined && "foo";
-console.log("1.1:", result);
+console.log("1.1:", result, Boolean(result));
 result = null && "foo";
-console.log("1.2:", result);
+console.log("1.2:", result, Boolean(result));
 result = 0 && "foo";
-console.log("1.3:", result);
+console.log("1.3:", result, Boolean(result));
 result = 2 && 0;
-console.log("2:", result);
+console.log("2:", result, Boolean(result));
 result = "foo" && 4;
-console.log("3:", result);
+console.log("3:", result, Boolean(result));
 result = "foo" && 4 && 5;
-console.log("4:", result);
+console.log("4:", result, Boolean(result));
+result = "foo" && undefined && null && 0 && 4 && 5;
+console.log("4.1:", result, Boolean(result));
+result = "foo" &&  0 && null && 5;
+console.log("4.2:", result, Boolean(result));
+
 
 // Logical OR (||)
 
 result = undefined || "foo";
-console.log("5.1:", result);
+console.log("5.1:", result, Boolean(result));
 result = null || "foo";
-console.log("5.2:", result);
+console.log("5.2:", result, Boolean(result));
 result = 0 || "foo";
-console.log("5.3:", result);
+console.log("5.3:", result, Boolean(result));
 result = 2 || 0;
-console.log("6:", result);
+console.log("6:", result, Boolean(result));
 result = "foo" || 4;
-console.log("7:", result);
+console.log("7:", result, Boolean(result));
 result = "foo" || 4 || 5;
-console.log("8:", result);
+console.log("8:", result, Boolean(result));
+
 
 const obj = {
   nulled: null,
@@ -63,3 +69,5 @@ if (typeof obj3 !== "undefined") {
   console.log("13:", obj3?.nondef);
   console.log("14:", obj3?.nulled);
 }
+
+
