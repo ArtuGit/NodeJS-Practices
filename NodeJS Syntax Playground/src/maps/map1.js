@@ -3,6 +3,7 @@ originalMap.set("key1", "value1");
 originalMap.set("key2", "value2");
 originalMap.set("key3", "value3");
 originalMap.set("key4", "value4");
+originalMap.set("may5", "value5");
 
 const filteredMap = new Map(
   [...originalMap].filter(([key, value]) => {

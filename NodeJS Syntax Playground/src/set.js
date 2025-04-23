@@ -1,4 +1,3 @@
-import { inspect } from "util";
 
 const set = new Set();
 
@@ -35,11 +34,11 @@ ws.add(bar);
 ws.add(bar);
 ws.has(foo); // true
 ws.has(bar); // true
-console.log(inspect(ws, { showHidden: true }));
+console.log(ws);
 ws.delete(foo); // removes foo from the set
 ws.has(foo); // false, foo has been removed
 ws.has(bar); // true, bar is retained
-console.log(inspect(ws, { showHidden: true }));
+console.log(ws);
 
 /* Use case: Detecting circular references
 Functions that call themselves recursively need a way of guarding against circular data structures by tracking which objects have already been processed. */

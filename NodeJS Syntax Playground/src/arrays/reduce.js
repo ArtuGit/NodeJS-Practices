@@ -22,20 +22,20 @@ function reducer(accumulator, currentValue, index) {
 
 array.reduce(reducer);
 
-const getMax = (a, b) => {
-  console.log(`a: ${a}, b: ${b}`);
-  return Math.max(a, b);
+const getMax = (accum, current) => {
+  console.log(`accum: ${accum}, current: ${current}`);
+  return Math.max(accum, current);
 };
 
 // callback is invoked for each element in the array starting at index 0
-const a = [1, 100, 200, 300].reduce(getMax); // 100
+const a = [1, 100, 200, 300].reduce(getMax); // 300
 console.log({ a });
 
 const a1 = [50].reduce(getMax); // 50
 console.log({ a1 });
 
 // callback is invoked once for element at index 1
-const a2 = [1, 100].reduce(getMax); // 100
+const a2 = [100, 1].reduce(getMax); // 100
 console.log({ a2 });
 
 // callback is not invoked
